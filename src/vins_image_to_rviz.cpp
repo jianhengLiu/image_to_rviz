@@ -1,10 +1,9 @@
+#include <opencv2/imgproc.hpp>
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
-#include <cv.h>
 #include <ros/package.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core/core.hpp>
-#include <opencv/cv.hpp>
 #include <dynamic_reconfigure/server.h>
 #include <image_to_rviz/paramsConfig.h>
 #include <eigen3/Eigen/Dense>

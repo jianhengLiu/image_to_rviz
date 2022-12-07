@@ -1,10 +1,9 @@
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
-#include <cv.h>
+#include <opencv2/opencv.hpp>
 #include <ros/package.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core/core.hpp>
-#include <opencv/cv.hpp>
 #include <dynamic_reconfigure/server.h>
 #include <image_to_rviz/paramsConfig.h>
 
@@ -43,11 +42,11 @@ int main( int argc, char** argv )
 
       cv::Mat src;
       std::string packagePath = ros::package::getPath("image_to_rviz");
-      src = cv::imread(packagePath + "/img/cyt.png", 1 );
+      src = cv::imread(packagePath + "/img/google_earth.png", 1 );
       //cv::resize(src, src, cv::Size(src.cols / 4, src.rows / 4));
 
       visualization_msgs::Marker image;
-      image.header.frame_id = "/world";
+      image.header.frame_id = "/map";
       image.header.stamp = ros::Time::now();
       image.ns = "image";
       image.id = 0;

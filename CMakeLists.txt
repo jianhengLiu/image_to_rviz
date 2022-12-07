@@ -18,18 +18,17 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-#add dynamic reconfigure api
-#find_package(catkin REQUIRED dynamic_reconfigure)
+# add dynamic reconfigure api
+# find_package(catkin REQUIRED dynamic_reconfigure)
 generate_dynamic_reconfigure_options(
   cfg/params.cfg
-  #...
+
+  # ...
 )
 
 catkin_package()
 
-
 # make sure configure headers are built before any node using them
-
 add_executable(image_to_rviz_node src/image_to_rviz_node.cpp)
 add_dependencies(image_to_rviz_node ${PROJECT_NAME}_gencfg)
 target_link_libraries(image_to_rviz_node ${catkin_LIBRARIES} ${OpenCV_LIBS})
@@ -41,3 +40,15 @@ target_link_libraries(vins_image_to_rviz ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_executable(vins_fusion_outdoor_img src/vins_fusion_outdoor_img.cpp)
 add_dependencies(vins_fusion_outdoor_img ${PROJECT_NAME}_gencfg)
 target_link_libraries(vins_fusion_outdoor_img ${catkin_LIBRARIES} ${OpenCV_LIBS})
+add_executable(republish src/republish.cpp)
+add_dependencies(republish ${PROJECT_NAME}_gencfg)
+target_link_libraries(republish ${catkin_LIBRARIES} ${OpenCV_LIBS})
+add_executable(republish_gt src/republish_gt.cpp)
+add_dependencies(republish_gt ${PROJECT_NAME}_gencfg)
+target_link_libraries(republish_gt ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
+add_executable(remap_mocap2vins src/remap_mocap2vins.cpp)
+target_link_libraries(remap_mocap2vins ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
+add_executable(republish_mocap src/republish_mocap.cpp)
+target_link_libraries(republish_mocap ${catkin_LIBRARIES})

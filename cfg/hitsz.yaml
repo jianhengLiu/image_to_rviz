@@ -1,0 +1,25 @@
+!!python/object/new:dynamic_reconfigure.encoding.Config
+dictitems:
+  dx_param: 115.0
+  dy_param: 135.0
+  groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+    dictitems:
+      dx_param: 115.0
+      dy_param: 135.0
+      groups: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      id: 0
+      name: Default
+      parameters: !!python/object/new:dynamic_reconfigure.encoding.Config
+        state: []
+      parent: 0
+      size_param: 380.0
+      state: true
+      type: ''
+      yaw: 2.6
+      z: -15.0
+    state: []
+  size_param: 380.0
+  yaw: 2.6
+  z: -15.0
+state: []
